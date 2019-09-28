@@ -20,6 +20,7 @@ public class HelloService2Test extends BaseTest {
         Mockito.when(helloService.sayHello("aa")).thenReturn("aaaaaa");
         Mockito.when(helloService.sayHello("bb")).thenReturn("bbbbbb");
         Mockito.when(helloService.sayHello("cc")).thenReturn("cccccc");
+//        Mockito.when(helloService.sayHello(Mockito.any(String.class))).thenReturn("qqqqqqq");
 
         String result = helloService2.sayHello("aa");
         Assert.assertEquals("AAAAAA", result);
