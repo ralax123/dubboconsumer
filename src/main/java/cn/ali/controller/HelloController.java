@@ -1,6 +1,8 @@
 package cn.ali.controller;
 
 import cn.ali.dubo.service.HelloService;
+import cn.ali.dubo.service.LogService;
+import cn.ali.service.HelloService2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +16,10 @@ public class HelloController {
      */
 //    @Reference(check = false, loadbalance = "roundrobin", timeout = 1000,retries = 3)
     @Autowired
-    private HelloService helloService;
+    private HelloService2 helloService;
+
+    @Autowired
+    private LogService logService;
 
     @RequestMapping("/hello")
     @ResponseBody
@@ -23,10 +28,12 @@ public class HelloController {
         return s;
     }
 
-    @RequestMapping("/bey")
+    @RequestMapping("/log")
     @ResponseBody
     public String log(String name) {
-        String s = helloService.sayBey(name);
-        return s;
+        String log = logService.log(name);
+        return log;
     }
+
+
 }
