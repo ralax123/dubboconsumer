@@ -22,4 +22,11 @@ public class HelloController {
         String s = helloService.sayHello(name);
         return s;
     }
+
+    @RequestMapping("/bey")
+    @ResponseBody
+    public String log(String name) {
+        String s = helloService.sayBey(name);
+        return s;
+    }
 }

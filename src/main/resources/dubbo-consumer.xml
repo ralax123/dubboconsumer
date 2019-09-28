@@ -16,12 +16,12 @@
 
     <!--    dubbo消费端在启动的时候时候要检查消费端已经启动:如果没有启动，那么，服务消费者也无法正常启动-->
     <!--等同于注解中@Reference(check = false, loadbalance = "roundrobin", timeout = 1000,retries = 3)-->
-<!--    <dubbo:consumer check="false"  loadbalance="roundrobin"  timeout="1000"  retries="1"></dubbo:consumer>-->
+    <dubbo:consumer check="false"   loadbalance="roundrobin"  timeout="1000"  retries="1"></dubbo:consumer>
 
 
     <!--    Reference 将会根据接口生成本地代理，实现与远程服务进行交互，实现远程调用- -->
     <dubbo:annotation package="cn.ali.controller"/>
 
     <!-- 不使用@reference注解时候,引用远程服务代理，可以和本地bean一样使用helloService -->
-    <dubbo:reference id="helloService" interface="cn.ali.dubo.service.HelloService"/>
+    <dubbo:reference id="helloService" interface="cn.ali.dubo.service.HelloService" group="aa" />
 </beans>
